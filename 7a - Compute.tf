@@ -23,7 +23,7 @@ resource "google_compute_instance" "sample-vm" {
 resource "google_compute_instance" "public-lannester-1" {
   name         = "public-lannester-1"
   machine_type = "e2-medium"
-  zone         = "us-south1-a"
+  zone         = "us-south1-b"
 
   boot_disk {
     initialize_params {
