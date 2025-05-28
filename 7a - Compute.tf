@@ -1,7 +1,7 @@
 resource "google_compute_instance" "sample-vm" {
   name         = "public-dallas-1"
   machine_type = "e2-medium"
-  zone         = "us-south1"
+  Region         = "us-south1"
 
 
   boot_disk {
