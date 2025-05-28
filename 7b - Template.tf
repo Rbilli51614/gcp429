@@ -3,7 +3,7 @@
 # https://developer.hashicorp.com/terraform/language/functions/file
 # Google Compute Engine: Regional Instance Template
 resource "google_compute_region_instance_template" "app" {
-  name         = "app-template-terraform"
+  name         = "app-template-terraform-hq"
   description  = "App-Template"
   machine_type = "e2-medium"
 
@@ -16,6 +16,54 @@ resource "google_compute_region_instance_template" "app" {
   # Network Configurations 
   network_interface {
     subnetwork = google_compute_subnetwork.hqinternal.id
+    /*access_config {
+      # Include this section to give the VM an external IP address
+    } */
+  }
+
+  # Install Webserver using file() function
+  metadata_startup_script = file("./startup.sh")
+}
+
+
+
+resource "google_compute_region_instance_template" "app2" {
+  name         = "app-template-lannester"
+  description  = "App-Template"
+  machine_type = "e2-medium"
+
+  # Create a new disk from an image and set as boot disk
+  disk {
+    source_image = "debian-cloud/debian-12"
+    boot         = true
+  }
+
+  # Network Configurations 
+  network_interface {
+    subnetwork = google_compute_subnetwork.lannester.id
+    /*access_config {
+      # Include this section to give the VM an external IP address
+    } */
+  }
+
+  # Install Webserver using file() function
+  metadata_startup_script = file("./startup.sh")
+}
+
+resource "google_compute_region_instance_template" "app3" {
+  name         = "app-template-stark"
+  description  = "App-Template"
+  machine_type = "e2-medium"
+
+  # Create a new disk from an image and set as boot disk
+  disk {
+    source_image = "debian-cloud/debian-12"
+    boot         = true
+  }
+
+  # Network Configurations 
+  network_interface {
+    subnetwork = google_compute_subnetwork.stark.id
     /*access_config {
       # Include this section to give the VM an external IP address
     } */
