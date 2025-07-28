@@ -5,5 +5,6 @@
 .terraform/providers/registry.terraform.io/hashicorp/google/6.33.0/darwin_amd64/terraform-provider-google_v6.33.0_x5
 .terraform/providers/registry.terraform.io/hashicorp/google/6.33.0/darwin_amd64/LICENSE.txt
 .terraform/providers/registry.terraform.io/hashicorp/google/4.85.0/darwin_amd64/terraform-provider-google_v4.85.0_x5
+.terraform/providers/registry.terraform.io/hashicorp/random/3.7.2/darwin_amd64/terraform-provider-random_v3.7.2_x5
 .terraform.lock.hcl
 gcpclass6-5rb-c135ba443005.json
