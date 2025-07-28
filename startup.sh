@@ -18,14 +18,18 @@ zone=$(curl -H "${METADATA_FLAVOR_HEADER}" -s "${METADATA_URL}/instance/zone")
 project_id=$(curl -H "${METADATA_FLAVOR_HEADER}" -s "${METADATA_URL}/project/project-id")
 network_tags=$(curl -H "${METADATA_FLAVOR_HEADER}" -s "${METADATA_URL}/instance/tags")
 
-
 # Create a simple HTML page and include instance details
 cat <<EOF > /var/www/html/index.html
 <html><body>
-<h2>Welcome to your custom website.</h2>
-<h3>Created with a direct input startup script!</h3>
+<h2>DANK THE TANK</h2>
+<h3>EARTHQUAKE!!!!!!!</h3>
 <p><b>Instance Name:</b> $(hostname -f)</p>
 <p><b>Instance Private IP Address: </b> $local_ipv4</p>
+
+<br>
+<img src="https://imgflip.com/gif/9ijh6u">
+<br>
+
 <p><b>Zone: </b> $zone</p>
 <p><b>Project ID:</b> $project_id</p>
 <p><b>Network Tags:</b> $network_tags</p>
